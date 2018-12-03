@@ -57,10 +57,10 @@ class Router extends Component {
           <Route exact path="/personaje/:personajeId" render={
               (props) => {
                 let idPersonaje = props.location.pathname.replace('/personaje/','');
-                
+                const solo = resultado.find(p => p.id === (parseInt(idPersonaje)));
                 return (
                 <PersonajeIndividual
-                  personaje={this.state.personajes[idPersonaje]}
+                  personaje={solo}
                 />
               )
             }} />
