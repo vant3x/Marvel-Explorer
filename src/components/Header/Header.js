@@ -6,7 +6,7 @@ import './Header.css';
 class Header extends React.Component {
   render() {
     return(
-      <header class="header-menu">
+      <header className="header-menu">
        <div className="row">
           <div className="col-md-12">
             <div className="container">

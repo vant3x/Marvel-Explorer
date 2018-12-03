@@ -15,7 +15,7 @@ class Buscador extends React.Component {
          <div className="col-3">
             <nav>
               <ul>
-                <li class="nav-li">
+                <li className="nav-li">
                   <a href="" className="nav-links">Todos</a>
                 </li>
               </ul>
