@@ -1,17 +1,13 @@
 import React from 'react';
 import './PersonajeIndividual.css';
 
-const PersonajeIndividual = (props) => {
-  // if(props) return null;
-  const {name} = props.personaje;
-  return(
-    <div className="info-personaje">
-      <div className="imagen">
-      </div>
-
-      <div className="info">
-        <h2>{name}</h2>
-      </div>
+const PersonajeIndividual = ({ personaje }) => {
+  if (!personaje) return <div>CARGANDO...</div>;
+  const { name, thumbnail } = personaje;
+  return (
+    <div> 
+       <h3>{name}</h3>
+      <img src={`${thumbnail.path}/standard_amazing.${thumbnail.extension}`} />
     </div>
   )
 }
