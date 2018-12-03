@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // components
 import Header from '../Header/Header';
 import Personajes from '../Personajes/Personajes';
@@ -12,10 +12,10 @@ class Router extends Component {
   state = {
     personajes: []
   }
-  
-  
+
+
   componentDidMount() {
-      this.obtenerPersonajes();
+    this.obtenerPersonajes();
   }
 
   // haciendo petición a la API
@@ -30,7 +30,7 @@ class Router extends Component {
         this.setState({
           personajes: respuesta.data.data.results
         })
-      }) 
+      })
   }
 
   render() {
@@ -38,35 +38,35 @@ class Router extends Component {
     let personajes = [...this.state.personajes];
     let resultado = personajes;
 
-    return(
+    return (
       <BrowserRouter>
-       <React.Fragment>
-       <Header/>
-        <Switch>
-          <Route exact path="/" render={() => (
-              <Personajes 
+        <React.Fragment>
+          <Header />
+          <Switch>
+            <Route exact path="/" render={() => (
+              <Personajes
                 personajes={resultado}
               />
-          )} />
-          <Route exact path="/personajes" render={() => (
-              <Personajes 
+            )} />
+            <Route exact path="/personajes" render={() => (
+              <Personajes
                 personajes={resultado}
               />
-          )} />
+            )} />
 
-          <Route exact path="/personaje/:personajeId" render={
-              (props) => {
-                let idPersonaje = props.location.pathname.replace('/personaje/','');
-                
+            <Route exact path="/personaje/:personajeId" render={
+              ({ match: { params: { personajeId } } }) => {
+
+                personajeId = Number.parseInt(personajeId)
+
                 return (
-                <PersonajeIndividual
-                  personaje={this.state.personajes[idPersonaje]}
-                />
-              )
-            }} />
-          
-        </Switch>
-       </React.Fragment>
+                  <PersonajeIndividual
+                    personaje={this.state.personajes.find(personaje => personaje.id === personajeId)}
+                  />
+                )
+              }} />
+          </Switch>
+        </React.Fragment>
       </BrowserRouter>
     )
   }
