@@ -1,4 +1,31 @@
+.personaje-box {
+  margin-bottom: 10px;
+
+}
+
 .max-width {
   max-width: 200px;
   width: 100%;
+}
+
+.nombre-personaje{
+  color: rgba(249, 29, 29, 0.908);
+  padding:0px 20px;
+
+}
+
+.btn-personaje {
+  text-align: center;
+  padding:0px 20px;
+  color: rgba(249, 29, 29, 0.712);
+}
+
+.img-personaje {
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+.img-personaje:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1)
 }

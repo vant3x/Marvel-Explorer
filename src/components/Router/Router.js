@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 // components
 import Header from '../Header/Header';
 import Personajes from '../Personajes/Personajes';
+import PersonajeIndividual from '../Personajes/PersonajeIndividual';
 // librerías
 import axios from 'axios';
 
@@ -47,6 +48,23 @@ class Router extends Component {
                 personajes={resultado}
               />
           )} />
+          <Route exact path="/personajes" render={() => (
+              <Personajes 
+                personajes={resultado}
+              />
+          )} />
+
+          <Route exact path="/personaje/:personajeId" render={
+              (props) => {
+                let idPersonaje = props.location.pathname.replace('/personaje/','');
+                
+                return (
+                <PersonajeIndividual
+                  personaje={this.state.personajes[idPersonaje]}
+                />
+              )
+            }} />
+          
         </Switch>
        </React.Fragment>
       </BrowserRouter>
