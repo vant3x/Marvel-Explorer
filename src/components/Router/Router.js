@@ -12,11 +12,12 @@ class Router extends Component {
     personajes: []
   }
   
-  // Api
+  
   componentDidMount() {
       this.obtenerPersonajes();
   }
 
+  // haciendo petición a la API
   obtenerPersonajes = () => {
     const hash = '11f0c7871378fc62314ac437ee45db22';
     const apiKey = 'e688ebddc4ba147099c69672ce2906bf';
@@ -24,7 +25,7 @@ class Router extends Component {
 
     axios.get(urlAPI)
       .then(respuesta => {
-        console.log(respuesta)
+        console.log(respuesta.data.data.results)
         this.setState({
           personajes: respuesta.data.data.results
         })
@@ -32,13 +33,19 @@ class Router extends Component {
   }
 
   render() {
+
+    let personajes = [...this.state.personajes];
+    let resultado = personajes;
+
     return(
       <BrowserRouter>
        <React.Fragment>
        <Header/>
         <Switch>
           <Route exact path="/" render={() => (
-              <Personajes />
+              <Personajes 
+                personajes={resultado}
+              />
           )} />
         </Switch>
        </React.Fragment>
