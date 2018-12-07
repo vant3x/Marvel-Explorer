@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Personaje from './Personaje';
+import Paginacion from '../Paginacion/Paginacion';
+
 import './Personajes.css';
 
 class Personajes extends Component {
@@ -8,7 +10,8 @@ class Personajes extends Component {
     return (
         <div className="personajes-main-container">
           <article className="container">
-
+          <h2 className="white-title p-t">Todos los Personajes</h2>
+          <hr className="white-hr" />
             <div className="row">
             {Object.keys(this.props.personajes).map(personaje => (
               <Personaje 
@@ -18,6 +21,7 @@ class Personajes extends Component {
             ))}
             </div>
           </article>
+          <Paginacion/>
         </div>
     
     );

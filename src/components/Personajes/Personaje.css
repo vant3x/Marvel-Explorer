@@ -11,7 +11,7 @@
 .nombre-personaje{
   color: rgba(249, 29, 29, 0.908);
   padding:0px 20px;
-
+  margin-top: 10px;
 }
 
 .btn-personaje {

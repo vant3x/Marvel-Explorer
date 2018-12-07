@@ -1,3 +1,14 @@
 .personajes-main-container {
   background: rgb(18, 20, 25);
 }
+
+.white-title {
+  color: #fff;
+}
+.p-t {
+  padding-top: 7px;
+}
+
+.white-hr {
+  background: rgba(195, 195, 195, 0.833);
+}

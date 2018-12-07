@@ -4,7 +4,7 @@ import Router from './components/Router/Router';
 class App extends Component {
   render() {
     return (
-      <div className="containers">
+      <div className="main-container">
         <Router />
       </div>
     );

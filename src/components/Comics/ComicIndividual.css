@@ -1,0 +1,35 @@
+.white-text {
+  color: #fff;
+}
+
+.red-text {
+  color: rgba(249, 29, 29, 0.908);
+}
+
+.black-text {
+  color: #000;
+}
+
+.top-space {
+  margin-top: 40px;
+}
+
+.max-width-img {
+  max-width: 500px;
+  width: 100%;
+}
+
+.red-circle {
+  color: #fff;
+  background: red;
+  padding: 3px 10px;
+  vertical-align: middle;
+  text-align: center;
+
+  border-radius: 20px;
+}
+
+li {
+  list-style:none;
+  color:white;
+}

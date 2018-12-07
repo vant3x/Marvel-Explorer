@@ -10,11 +10,14 @@ class Header extends React.Component {
        <div className="row">
           <div className="col-md-12">
             <div className="container">
-              <Buscador/>
+              <Buscador
+               obtenerResultadosBusqueda={this.props.obtenerResultadosBusqueda}
+              />
             </div>
           </div>
        </div>
       </header>
+
     );
   }
 }
